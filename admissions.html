@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admissions | Muteremuko VTC – Bungoma County</title>
+  <meta name="description" content="Apply to Muteremuko VTC. Fill in the admission form or send an enquiry online.">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar" role="navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand">
+      <img src="logo.jpeg" alt="Muteremuko VTC Logo" />
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">Muteremuko VTC</span>
+        <span class="nav-brand-sub">Bungoma County</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="departments.html">Departments</a></li>
+      <li><a href="admissions.html" class="active">Admissions</a></li>
+      <li><a href="fees.html">Fees</a></li>
+      <li class="nav-cta"><a href="admissions.html">Apply Now</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Admissions</span></div>
+    <h1>Apply to <span>Muteremuko VTC</span></h1>
+    <p>Fill in the form below to apply or send an enquiry. Admissions are open every term.</p>
+  </div>
+</div>
+
+<section class="page-section">
+  <div class="section-container">
+
+    <div class="adm-layout">
+
+      <!-- LEFT: Requirements sidebar -->
+      <aside class="adm-sidebar reveal">
+
+        <div class="adm-req-box">
+          <h3>📋 What to Bring</h3>
+          <div class="adm-req-group">
+            <h4>📄 Documents</h4>
+            <ul>
+              <li>5 Files</li>
+              <li>2 Coloured Passport Photos</li>
+              <li>Copy of ID or Birth Certificate</li>
+              <li>Result Slip (where applicable)</li>
+            </ul>
+          </div>
+          <div class="adm-req-group">
+            <h4>📚 Stationery</h4>
+            <ul>
+              <li>1 ream photocopying paper / year</li>
+              <li>1 ream ruled paper / year</li>
+              <li>1 Black book</li>
+              <li>5 books (A4, 200 pages each)</li>
+              <li>1 A3 Drawing Book</li>
+            </ul>
+          </div>
+          <div class="adm-req-group">
+            <h4>👕 Uniform</h4>
+            <ul>
+              <li>Girls: Black skirt</li>
+              <li>Boys: Black trousers</li>
+              <li>White branded blouse/shirt — <strong>Ksh 1,500</strong> (made at MVTC)</li>
+            </ul>
+          </div>
+          <div class="adm-req-group">
+            <h4>💰 Fees</h4>
+            <ul>
+              <li>Student Fee: <strong>Ksh 100/year</strong></li>
+              <li>Internal Exam Fees: <strong>Ksh 300/term</strong></li>
+              <li>Term 1: <strong>Ksh 8,000</strong></li>
+            </ul>
+          </div>
+          <a href="fees.html" class="adm-req-link">View full fee structure →</a>
+        </div>
+
+        <div class="adm-req-box adm-payment-box">
+          <h3>💳 Fee Payment</h3>
+          <div class="adm-pay-row"><span>Bank</span><strong>KCB Bank Kenya</strong></div>
+          <div class="adm-pay-row"><span>Paybill</span><strong>522522</strong></div>
+          <div class="adm-pay-row"><span>Account</span><strong>1238473288</strong></div>
+        </div>
+
+      </aside>
+
+      <!-- RIGHT: Forms -->
+      <div class="adm-forms">
+
+        <!-- Tabs -->
+        <div class="adm-tabs">
+          <button class="adm-tab active" data-tab="apply">🎓 Application Form</button>
+          <button class="adm-tab" data-tab="enquiry">💬 Send Enquiry</button>
+        </div>
+
+        <!-- APPLICATION FORM -->
+        <div class="adm-form-panel active" id="tab-apply">
+          <p class="adm-form-intro">Complete the form below. We will contact you to confirm your place and arrange reporting.</p>
+          <form class="adm-form" action="https://formspree.io/f/muteremukovtc" method="POST">
+            <input type="hidden" name="_subject" value="New Admission Application – Muteremuko VTC" />
+
+            <div class="form-section-label">Personal Details</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full-name">Full Name <span class="req-star">*</span></label>
+                <input type="text" id="full-name" name="full_name" placeholder="e.g. John Wekesa Barasa" required />
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth <span class="req-star">*</span></label>
+                <input type="date" id="dob" name="date_of_birth" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="gender">Gender <span class="req-star">*</span></label>
+                <select id="gender" name="gender" required>
+                  <option value="" disabled selected>Select gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="nationality">Nationality</label>
+                <input type="text" id="nationality" name="nationality" placeholder="e.g. Kenyan" value="Kenyan" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="id-number">ID / Birth Certificate No. <span class="req-star">*</span></label>
+                <input type="text" id="id-number" name="id_number" placeholder="National ID or Birth Cert number" required />
+              </div>
+              <div class="form-group">
+                <label for="county">County of Origin</label>
+                <input type="text" id="county" name="county" placeholder="e.g. Bungoma" />
+              </div>
+            </div>
+
+            <div class="form-section-label">Contact Details</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="req-star">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g. 0712 345 678" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="optional" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="address">Postal / Physical Address</label>
+              <input type="text" id="address" name="address" placeholder="e.g. P.O Box 123, Bungoma" />
+            </div>
+
+            <div class="form-section-label">Next of Kin</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="kin-name">Name <span class="req-star">*</span></label>
+                <input type="text" id="kin-name" name="kin_name" placeholder="Parent / Guardian name" required />
+              </div>
+              <div class="form-group">
+                <label for="kin-phone">Phone <span class="req-star">*</span></label>
+                <input type="tel" id="kin-phone" name="kin_phone" placeholder="e.g. 0722 000 000" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="kin-relation">Relationship</label>
+              <select id="kin-relation" name="kin_relation">
+                <option value="" disabled selected>Select relationship</option>
+                <option>Parent</option>
+                <option>Guardian</option>
+                <option>Sibling</option>
+                <option>Spouse</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-section-label">Academic &amp; Course Details</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="course">Course Applied For <span class="req-star">*</span></label>
+                <select id="course" name="course" required>
+                  <option value="" disabled selected>Select a course</option>
+                  <option>Motor Vehicle Mechanics</option>
+                  <option>Masonry</option>
+                  <option>Hairdressing &amp; Beauty Therapy</option>
+                  <option>Plumbing &amp; Pipe Fitting</option>
+                  <option>Electrical Installation</option>
+                  <option>Dress Making</option>
+                  <option>Computer Studies (ICT)</option>
+                  <option>Welding &amp; Fabrication</option>
+                  <option>Computer Packages (3 months)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="intake">Intended Intake Term <span class="req-star">*</span></label>
+                <select id="intake" name="intake" required>
+                  <option value="" disabled selected>Select term</option>
+                  <option>Term 1 (January)</option>
+                  <option>Term 2 (May)</option>
+                  <option>Term 3 (September)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="education">Highest Education Level</label>
+              <select id="education" name="education">
+                <option value="" disabled selected>Select level</option>
+                <option>Primary (KCPE)</option>
+                <option>Secondary (KCSE)</option>
+                <option>Certificate</option>
+                <option>Diploma</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="remarks">Additional Remarks</label>
+              <textarea id="remarks" name="remarks" rows="3" placeholder="Any additional information you'd like us to know..."></textarea>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" id="confirm" name="confirm" required />
+              <label for="confirm">I confirm that the information provided is accurate and I understand the admission requirements.</label>
+            </div>
+
+            <button type="submit" class="adm-submit-btn">Submit Application →</button>
+          </form>
+        </div>
+
+        <!-- ENQUIRY FORM -->
+        <div class="adm-form-panel" id="tab-enquiry">
+          <p class="adm-form-intro">Have a question before applying? Send us a message and we'll get back to you as soon as possible.</p>
+          <form class="adm-form" action="https://formspree.io/f/muteremukovtc" method="POST">
+            <input type="hidden" name="_subject" value="Admissions Enquiry – Muteremuko VTC" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="enq-name">Your Name <span class="req-star">*</span></label>
+                <input type="text" id="enq-name" name="name" placeholder="Full name" required />
+              </div>
+              <div class="form-group">
+                <label for="enq-phone">Phone Number <span class="req-star">*</span></label>
+                <input type="tel" id="enq-phone" name="phone" placeholder="e.g. 0712 345 678" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="enq-email">Email Address</label>
+              <input type="email" id="enq-email" name="email" placeholder="optional" />
+            </div>
+            <div class="form-group">
+              <label for="enq-course">Course of Interest</label>
+              <select id="enq-course" name="course">
+                <option value="" disabled selected>Select a course (optional)</option>
+                <option>Motor Vehicle Mechanics</option>
+                <option>Masonry</option>
+                <option>Hairdressing &amp; Beauty Therapy</option>
+                <option>Plumbing &amp; Pipe Fitting</option>
+                <option>Electrical Installation</option>
+                <option>Dress Making</option>
+                <option>Computer Studies (ICT)</option>
+                <option>Welding &amp; Fabrication</option>
+                <option>Computer Packages (3 months)</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="enq-message">Your Message <span class="req-star">*</span></label>
+              <textarea id="enq-message" name="message" rows="5" placeholder="Type your question or message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="adm-submit-btn">Send Enquiry →</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="logo.jpeg" alt="Muteremuko VTC Logo" />
+      <p>Muteremuko Vocational Training Centre — County Government of Bungoma, Department of Education &amp; Vocational Training.</p>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="departments.html">Departments</a></li>
+      <li><a href="admissions.html">Admissions</a></li>
+      <li><a href="fees.html">Fees</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Courses</h4><ul>
+      <li><a href="courses.html#motor-vehicle">Motor Mechanics</a></li>
+      <li><a href="courses.html#electrical">Electrical</a></li>
+      <li><a href="courses.html#ict">Computer Studies</a></li>
+      <li><a href="courses.html#hairdressing">Hairdressing</a></li>
+      <li><a href="courses.html#welding">Welding</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4>
+      <div class="footer-contact-list">
+        <a href="https://wa.me/2540703966177" target="_blank" class="footer-contact-item">
+          <span class="footer-icon">📱</span>
+          <span>0703 966 177</span>
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&to=muteremukovtc@gmail.com" target="_blank" class="footer-contact-item">
+          <span class="footer-icon">✉️</span>
+          <span>muteremukovtc@gmail.com</span>
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Muteremuko+VTC+Bungoma" target="_blank" class="footer-contact-item">
+          <span class="footer-icon">📍</span>
+          <span>Khalaba Ward, Bungoma</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span class="auto-year">2026</span> Muteremuko VTC — County Government of Bungoma.</p>
+    <p class="footer-motto">Technical Skill is Power</p>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">&#8593;</button>
+<script src="main.js"></script>
+<script>
+  document.querySelectorAll('.adm-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.adm-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.adm-form-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
