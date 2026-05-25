@@ -107,8 +107,119 @@
         <!-- APPLICATION FORM -->
         <div class="adm-form-panel active" id="tab-apply">
           <p class="adm-form-intro">Complete the form below. We will contact you to confirm your place and arrange reporting.</p>
-          <form class="adm-form" action="https://formspree.io/f/muteremukovtc" method="POST">
             <input type="hidden" name="_subject" value="New Admission Application – Muteremuko VTC" />
+
+            <!-- APPLICATION SUMMARY (shown after submit) -->
+          <div class="app-summary" id="app-summary" style="display:none;">
+            <div class="app-summary-header">
+              <span class="app-summary-icon">🎓</span>
+              <div>
+                <div class="app-summary-title">Application Submitted!</div>
+                <div class="app-summary-sub">Please complete your admission fee payment below.</div>
+              </div>
+            </div>
+            <div class="app-summary-body">
+              <div class="app-summary-row"><span>Name</span><strong id="sum-name">—</strong></div>
+              <div class="app-summary-row"><span>Course</span><strong id="sum-course">—</strong></div>
+              <div class="app-summary-row"><span>Intake</span><strong id="sum-intake">—</strong></div>
+              <div class="app-summary-row"><span>Phone</span><strong id="sum-phone">—</strong></div>
+              <div class="app-summary-row app-summary-ref"><span>Application ID</span><strong id="sum-ref">—</strong></div>
+            </div>
+
+            <div class="app-payment-step">
+              <div class="app-payment-label">💳 Step 2 — Pay Admission Fee</div>
+              <div class="app-payment-amount">Ksh 500 <span>Admission Fee</span></div>
+
+              <!-- Payment method selector -->
+              <div class="pay-method-tabs">
+                <button type="button" class="pay-method-btn active" data-method="mpesa">📱 M-Pesa</button>
+                <button type="button" class="pay-method-btn" data-method="kcb">🏦 KCB Paybill</button>
+              </div>
+
+              <!-- M-Pesa panel -->
+              <div class="pay-panel active" id="pay-mpesa">
+                <div class="kcb-payment-card">
+                  <div class="kcb-bank-header" style="background:linear-gradient(135deg,#4CAF50,#2e7d32);">
+                    <span class="kcb-logo">📱</span>
+                    <div>
+                      <div class="kcb-bank-name">M-Pesa</div>
+                      <div class="kcb-bank-sub">Send Money directly to MVTC</div>
+                    </div>
+                  </div>
+                  <div class="kcb-details">
+                    <div class="kcb-row">
+                      <span>Send to Number</span>
+                      <strong class="kcb-val">0703 966 177</strong>
+                      <button type="button" class="kcb-copy-btn" data-copy="0703966177">Copy</button>
+                    </div>
+                    <div class="kcb-row"><span>Amount</span><strong class="kcb-val">Ksh 500</strong></div>
+                  </div>
+                  <div class="kcb-instructions">
+                    <div class="kcb-step"><span>1</span> Go to M-Pesa → Send Money</div>
+                    <div class="kcb-step"><span>2</span> Enter number: <strong>0703 966 177</strong></div>
+                    <div class="kcb-step"><span>3</span> Amount: <strong>Ksh 500</strong> → Enter PIN → Send</div>
+                    <div class="kcb-step"><span>4</span> Copy the <strong>M-Pesa confirmation code</strong> from the SMS you receive and paste it below</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- KCB Paybill panel -->
+              <div class="pay-panel" id="pay-kcb">
+                <div class="kcb-payment-card">
+                  <div class="kcb-bank-header">
+                    <span class="kcb-logo">🏦</span>
+                    <div>
+                      <div class="kcb-bank-name">KCB Bank Kenya — Paybill</div>
+                      <div class="kcb-bank-sub">Muteremuko Vocational Training Centre</div>
+                    </div>
+                  </div>
+                  <div class="kcb-details">
+                    <div class="kcb-row">
+                      <span>Paybill Number</span>
+                      <strong class="kcb-val">522522</strong>
+                      <button type="button" class="kcb-copy-btn" data-copy="522522">Copy</button>
+                    </div>
+                    <div class="kcb-row">
+                      <span>Account Number</span>
+                      <strong class="kcb-val">1238473288</strong>
+                      <button type="button" class="kcb-copy-btn" data-copy="1238473288">Copy</button>
+                    </div>
+                    <div class="kcb-row"><span>Amount</span><strong class="kcb-val">Ksh 500</strong></div>
+                  </div>
+                  <div class="kcb-instructions">
+                    <div class="kcb-step"><span>1</span> Go to M-Pesa → Lipa na M-Pesa → Pay Bill</div>
+                    <div class="kcb-step"><span>2</span> Business No: <strong>522522</strong></div>
+                    <div class="kcb-step"><span>3</span> Account No: <strong>1238473288</strong></div>
+                    <div class="kcb-step"><span>4</span> Amount: <strong>Ksh 500</strong> → Enter PIN → Send</div>
+                    <div class="kcb-step"><span>5</span> Copy the <strong>M-Pesa confirmation code</strong> from the SMS and paste it below</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Confirmation code submission -->
+              <div class="pay-confirm-form">
+                <label class="pay-confirm-label" for="pay-confirm-code">📋 Paste M-Pesa Confirmation Code <span class="req-star">*</span></label>
+                <input type="text" id="pay-confirm-code" class="pay-confirm-input" placeholder="e.g. QHX4K2ABCD" maxlength="20" />
+                <p class="pay-confirm-hint">This is the code in the SMS sent to your phone after payment. We will use it to verify your payment.</p>
+                <button type="button" class="adm-submit-btn" id="pay-submit-btn">Submit Payment Confirmation →</button>
+              </div>
+
+              <!-- Payment confirmed card (shown after confirmation submitted) -->
+              <div class="pay-done-card" id="pay-done-card" style="display:none;">
+                <div class="pay-done-icon">🎉</div>
+                <div class="pay-done-title">Payment Confirmation Received!</div>
+                <p class="pay-done-msg">Your confirmation code has been sent to MVTC. We will verify your payment and contact you within <strong>1 business day</strong> to confirm your admission.</p>
+                <div class="pay-done-contacts">
+                  <a href="https://wa.me/2540703966177" target="_blank" class="kcb-whatsapp-btn">📲 Follow up on WhatsApp</a>
+                  <a href="mailto:muteremukovtc@gmail.com" class="kcb-new-app-btn" style="text-decoration:none;display:inline-flex;align-items:center;">✉️ Email Us</a>
+                </div>
+              </div>
+
+              <button type="button" class="kcb-new-app-btn" id="new-app-btn" style="margin-top:1.25rem;">Submit Another Application</button>
+            </div>
+          </div>
+
+          <form class="adm-form" id="adm-main-form">
 
             <div class="form-section-label">Personal Details</div>
             <div class="form-row">
@@ -240,7 +351,7 @@
         <!-- ENQUIRY FORM -->
         <div class="adm-form-panel" id="tab-enquiry">
           <p class="adm-form-intro">Have a question before applying? Send us a message and we'll get back to you as soon as possible.</p>
-          <form class="adm-form" action="https://formspree.io/f/muteremukovtc" method="POST">
+          <form class="adm-form" action="https://formspree.io/f/xpqnjkzd" method="POST">
             <input type="hidden" name="_subject" value="Admissions Enquiry – Muteremuko VTC" />
 
             <div class="form-row">
@@ -334,14 +445,374 @@
 <button class="back-to-top" aria-label="Back to top">&#8593;</button>
 <script src="main.js"></script>
 <script>
+  // =========================
+  // FORMSpree Endpoint
+  // =========================
+  const FORMSPREE_URL = "https://formspree.io/f/xpqnjkzd";
+
+  // =========================
+  // TAB SWITCHING
+  // =========================
   document.querySelectorAll('.adm-tab').forEach(tab => {
     tab.addEventListener('click', () => {
-      document.querySelectorAll('.adm-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.adm-form-panel').forEach(p => p.classList.remove('active'));
+
+      document.querySelectorAll('.adm-tab')
+        .forEach(t => t.classList.remove('active'));
+
+      document.querySelectorAll('.adm-form-panel')
+        .forEach(panel => panel.classList.remove('active'));
+
       tab.classList.add('active');
-      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+
+      document
+        .getElementById('tab-' + tab.dataset.tab)
+        .classList.add('active');
     });
   });
+
+  // =========================
+  // APPLICATION FORM SUBMIT
+  // =========================
+  const admForm = document.getElementById('adm-main-form');
+
+  admForm.addEventListener('submit', async function (e) {
+
+    e.preventDefault();
+
+    const submitBtn =
+      admForm.querySelector('button[type="submit"]');
+
+    submitBtn.textContent = 'Submitting...';
+    submitBtn.disabled = true;
+
+    // Generate Application ID
+    const refNum =
+      'MVTC-' +
+      new Date().getFullYear() +
+      '-' +
+      Math.floor(1000 + Math.random() * 9000);
+
+    // Form values
+    const name =
+      document.getElementById('full-name').value;
+
+    const course =
+      document.getElementById('course').value;
+
+    const intake =
+      document.getElementById('intake').value;
+
+    const phone =
+      document.getElementById('phone').value;
+
+    // Create form data
+    const formData = new FormData(admForm);
+
+    formData.append("_subject",
+      "New Admission Application - " + refNum);
+
+    formData.append("application_id", refNum);
+
+    try {
+
+      const response = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+
+        // Fill summary
+        document.getElementById('sum-name').textContent = name;
+        document.getElementById('sum-course').textContent = course;
+        document.getElementById('sum-intake').textContent = intake;
+        document.getElementById('sum-phone').textContent = phone;
+        document.getElementById('sum-ref').textContent = refNum;
+
+        // Hide form
+        admForm.style.display = 'none';
+
+        // Show payment step
+        document.getElementById('app-summary').style.display = 'block';
+
+        // Scroll
+        document.getElementById('app-summary')
+          .scrollIntoView({
+            behavior: 'smooth'
+          });
+
+      } else {
+
+        alert(
+          "Submission failed. Please try again or contact us on WhatsApp."
+        );
+      }
+
+    } catch (error) {
+
+      alert(
+        "Network error. Please check your internet connection."
+      );
+    }
+
+    submitBtn.textContent = 'Submit Application →';
+    submitBtn.disabled = false;
+
+  });
+
+  // =========================
+  // PAYMENT METHOD SWITCHING
+  // =========================
+  document.querySelectorAll('.pay-method-btn')
+    .forEach(btn => {
+
+      btn.addEventListener('click', function () {
+
+        document.querySelectorAll('.pay-method-btn')
+          .forEach(b => b.classList.remove('active'));
+
+        document.querySelectorAll('.pay-panel')
+          .forEach(panel => panel.classList.remove('active'));
+
+        this.classList.add('active');
+
+        document
+          .getElementById('pay-' + this.dataset.method)
+          .classList.add('active');
+
+      });
+
+    });
+
+  // =========================
+  // COPY BUTTONS
+  // =========================
+  document.querySelectorAll('.kcb-copy-btn')
+    .forEach(btn => {
+
+      btn.addEventListener('click', function () {
+
+        navigator.clipboard.writeText(this.dataset.copy);
+
+        const original = this.textContent;
+
+        this.textContent = "Copied!";
+
+        setTimeout(() => {
+          this.textContent = original;
+        }, 1500);
+
+      });
+
+    });
+
+  // =========================
+  // PAYMENT CONFIRMATION
+  // =========================
+  document.getElementById('pay-submit-btn')
+    .addEventListener('click', async function () {
+
+      const code =
+        document.getElementById('pay-confirm-code')
+        .value.trim();
+
+      if (!code) {
+
+        alert("Please enter the M-Pesa confirmation code.");
+
+        return;
+      }
+
+      const btn = this;
+
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+
+      // Detect selected method
+      const method =
+        document.querySelector('.pay-method-btn.active')
+        .dataset.method === 'mpesa'
+          ? 'M-Pesa'
+          : 'KCB Paybill';
+
+      // Create payment data
+      const paymentData = new FormData();
+
+      paymentData.append("_subject",
+        "Payment Confirmation");
+
+      paymentData.append(
+        "application_id",
+        document.getElementById('sum-ref').textContent
+      );
+
+      paymentData.append(
+        "student_name",
+        document.getElementById('sum-name').textContent
+      );
+
+      paymentData.append(
+        "course",
+        document.getElementById('sum-course').textContent
+      );
+
+      paymentData.append(
+        "payment_method",
+        method
+      );
+
+      paymentData.append(
+        "confirmation_code",
+        code
+      );
+
+      paymentData.append(
+        "amount",
+        "Ksh 500"
+      );
+
+      try {
+
+        const response = await fetch(FORMSPREE_URL, {
+          method: "POST",
+          body: paymentData,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (response.ok) {
+
+          // Hide payment form
+          document.querySelector('.pay-method-tabs')
+            .style.display = 'none';
+
+          document.querySelectorAll('.pay-panel')
+            .forEach(panel => {
+              panel.style.display = 'none';
+            });
+
+          document.querySelector('.pay-confirm-form')
+            .style.display = 'none';
+
+          // Show success card
+          document.getElementById('pay-done-card')
+            .style.display = 'block';
+
+        } else {
+
+          alert("Payment confirmation failed.");
+
+        }
+
+      } catch (error) {
+
+        alert("Network error while submitting payment.");
+
+      }
+
+      btn.textContent = 'Submit Payment Confirmation →';
+      btn.disabled = false;
+
+    });
+
+  // =========================
+  // SUBMIT ANOTHER APPLICATION
+  // =========================
+  document.getElementById('new-app-btn')
+    .addEventListener('click', () => {
+
+      // Reset form
+      admForm.reset();
+
+      // Show form
+      admForm.style.display = 'flex';
+
+      // Hide summary
+      document.getElementById('app-summary')
+        .style.display = 'none';
+
+      // Reset payment UI
+      document.querySelector('.pay-method-tabs')
+        .style.display = 'flex';
+
+      document.querySelector('.pay-confirm-form')
+        .style.display = 'block';
+
+      document.getElementById('pay-done-card')
+        .style.display = 'none';
+
+      document.querySelectorAll('.pay-panel')
+        .forEach(panel => {
+          panel.style.display = '';
+        });
+
+      // Scroll
+      admForm.scrollIntoView({
+        behavior: 'smooth'
+      });
+
+    });
+
+  // =========================
+  // ENQUIRY FORM
+  // =========================
+  const enquiryForm =
+    document.querySelector('#tab-enquiry form');
+
+  enquiryForm.addEventListener('submit', async function (e) {
+
+    e.preventDefault();
+
+    const btn =
+      enquiryForm.querySelector('button[type="submit"]');
+
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const enquiryData = new FormData(enquiryForm);
+
+    enquiryData.append(
+      "_subject",
+      "Admissions Enquiry"
+    );
+
+    try {
+
+      const response = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        body: enquiryData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+
+        alert("Enquiry sent successfully!");
+
+        enquiryForm.reset();
+
+      } else {
+
+        alert("Failed to send enquiry.");
+
+      }
+
+    } catch (error) {
+
+      alert("Network error.");
+
+    }
+
+    btn.textContent = 'Send Enquiry →';
+    btn.disabled = false;
+
+  });
+
 </script>
 </body>
 </html>
